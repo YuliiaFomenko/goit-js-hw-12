@@ -1,0 +1,10 @@
+import{a as l,S as d,i}from"./assets/vendor-DYLXiCJH.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const a of t.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&o(a)}).observe(document,{childList:!0,subtree:!0});function n(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function o(e){if(e.ep)return;e.ep=!0;const t=n(e);fetch(e.href,t)}})();const u="49021179-e432bb9a2ad6e70ca9f1cd413",f="https://pixabay.com/api/";function m(s){return l.get(f,{params:{key:u,q:s,image_type:"photo",orientation:"horizontal",safesearch:!0}}).then(r=>r.data.hits).catch(r=>(console.error("Error fetching images:",r),[]))}function p(s){const r=s.map(o=>`<a href="${o.largeImageURL}" class="gallery-item">
+                <img src="${o.webformatURL}" alt="${o.tags}">
+                <div class="info">
+                    <p><b>Likes:</b> ${o.likes}</p>
+                    <p><b>Views:</b> ${o.views}</p>
+                    <p><b>Comments:</b> ${o.comments}</p>
+                    <p><b>Downloads:</b> ${o.downloads}</p>
+                </div>
+            </a>`).join("");gallery.innerHTML=r,new d(".gallery a").refresh()}const h=document.querySelector(".search-form"),g=document.querySelector(".gallery"),c=document.querySelector(".loader");h.addEventListener("submit",s=>{s.preventDefault();const r=s.target.elements[0].value.trim();if(!r){i.warning({message:"Please enter a search query!"});return}g.innerHTML="",c.classList.remove("hidden"),m(r).then(n=>{if(c.classList.add("hidden"),n.length===0){i.error({message:"Sorry, there are no images matching your search query. Please try again!"});return}p(n)}).catch(()=>{c.classList.add("hidden"),i.error({message:"Something went wrong. Please try again."})})});
+//# sourceMappingURL=index.js.map
