@@ -159,3 +159,36 @@
 .info p {
   margin: 4px 0;
 }
+/*-----------------------*/
+
+.load-more-button {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.load-more-button:hover {
+  background-color: #005f73;
+}
+
+.load-more-button.hidden {
+  display: none;
+}
+
+.end-message {
+  text-align: center;
+  font-size: 18px;
+  color: #d9534f;
+  margin-top: 20px;
+}
+
+.end-message.hidden {
+  display: none;
+}
