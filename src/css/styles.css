@@ -125,6 +125,7 @@
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .gallery-item {
@@ -164,7 +165,7 @@
 .load-more-button {
   display: block;
   width: 200px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   padding: 10px;
   background-color: #008cba;
   color: white;

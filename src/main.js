@@ -68,7 +68,7 @@ loadMoreButton.addEventListener('click', async () => {
       });
       return;
     }
-    renderGallery(data.hits);
+    renderGallery(data.hits, true);
 
     const cardHeight = document
       .querySelector('.gallery-item')

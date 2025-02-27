@@ -1,7 +1,9 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-export function renderGallery(images) {
+const gallery = document.querySelector('.gallery');
+
+export function renderGallery(images, isLoadMore = false) {
   const markup = images
     .map(
       image =>
@@ -17,7 +19,11 @@ export function renderGallery(images) {
     )
     .join('');
 
-  gallery.innerHTML = markup;
+  if (isLoadMore) {
+    gallery.insertAdjacentHTML('beforeend', markup);
+  } else {
+    gallery.innerHTML = markup;
+  }
 
   const lightbox = new SimpleLightbox('.gallery a');
   lightbox.refresh();
